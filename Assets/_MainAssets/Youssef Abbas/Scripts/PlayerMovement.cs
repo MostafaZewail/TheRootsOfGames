@@ -11,7 +11,9 @@ public class PlayerMovement : MonoBehaviour
 
     void Start()
     {
-        speed = 5f;
+        //speed = 5f;
+        rigid = GetComponent<Rigidbody>();
+
     }
 
     // Update is called once per frame

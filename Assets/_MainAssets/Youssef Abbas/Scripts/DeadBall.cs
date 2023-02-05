@@ -12,19 +12,24 @@ public class DeadBall : MonoBehaviour
 
     [SerializeField] private int playerScore;
     [SerializeField] private int enemyScore;
+
+    public int PlayerScore { get => playerScore; set => playerScore = value; }
+    public int EnemyScore { get => enemyScore; set => enemyScore = value; }
+
     private void OnCollisionEnter(Collision collision)
     {
         if (collision.gameObject.CompareTag("PlayerGoal"))
         {
-            playerScore++;
-            playerScoreText.text = playerScore.ToString();
+            EnemyScore++;
+            enemyScoreText.text = EnemyScore.ToString();
             transform.position = ballSpawnPoint;
         }
 
         if (collision.gameObject.CompareTag("EnemyGoal"))
         {
-            enemyScore++;
-            enemyScoreText.text = playerScore.ToString();
+
+            PlayerScore++;
+            playerScoreText.text = PlayerScore.ToString();
             transform.position = ballSpawnPoint;
         }
     }

@@ -20,6 +20,7 @@ public class BallBounce : MonoBehaviour
     {
         Vector3 noramal = collision.contacts[0].normal;
         direction = Vector3.Reflect(direction, noramal);
+
         pongAudioManager.instance.PlaySFX("ballBounce");
     }
 }
